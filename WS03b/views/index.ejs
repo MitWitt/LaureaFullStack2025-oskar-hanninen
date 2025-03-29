@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS Workshop</title>
+</head>
+<body>
+    <%- include("partials/_header") %>
+<h1><%= message %></h1>
+    <ul>
+        <% items.forEach(item => { %>
+            <li><%= item %></li>
+        <% }); %>
+    </ul>
+    
+    <% if (isAdmin) { %>
+        <p><strong>Olet admin!</strong></p>
+    <% } else { %>
+        <p>Olet normaali käyttäjä.</p>
+    <% } %>
+   
+    <%- include("partials/_footer") %>
+
+    
+</body>
+</html>
